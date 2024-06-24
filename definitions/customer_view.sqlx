@@ -1,0 +1,21 @@
+-- This is an example SQLX file to help you learn the basics of Dataform.
+-- Visit https://cloud.google.com/dataform/docs/sql-workflows for more information on how to configure your SQL workflow.
+
+-- You can delete this file, then commit and push your changes to your repository when you are ready.
+
+-- Config blocks allow you to configure, document, and test your data assets.
+config {
+  type: "view", // Creates a view in BigQuery. Try changing to "table" instead.
+  columns: {
+    Customer: "Name of the customer", // Column descriptions are pushed to BigQuery.
+    Bill_Amount: "Amount of the bill",
+    Customer_City: "City of the customer",
+    Customer_State: "State of the cutomer"
+  }
+}
+
+-- The rest of a SQLX file contains your SELECT statement used to create the table.
+
+select cus.customer_name as Customer,ods.total_bill as Bill_Amount,cus.city as Customer_City,cus.state as Customer_State
+from presentation_dataset.customer cus inner join presentation_dataset.orders ods
+on cus.customer_id=ods.customer_id
