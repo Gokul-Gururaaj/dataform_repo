@@ -1,7 +1,4 @@
-config 
-{ 
-  type: "table"
-  name: "particular_day_revenue" 
-}
+config { type: "table"}
 
-select sum(total_bill) as total_revenue from presentation_dataset.orders where order_date='dataform.projectConfig.vars.orderdate'; 
+select sum(total_bill) as total_revenue 
+from presentation_dataset.orders where order_date='${dataform.projectConfig.vars.orderdate}'

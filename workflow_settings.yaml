@@ -4,4 +4,4 @@ defaultDataset: presentation_dataset
 defaultAssertionDataset: dataform_assertions
 dataformCoreVersion: 3.0.0-beta.4
 vars:
-    orderdate: 2024-06-01
+    orderdate: '2024-06-01'
