@@ -1,0 +1,7 @@
+config {
+    type: "table",
+    name:"Holiday Calendar"
+}
+select Serial_No,Reason ,Date 
+from presentation_dataset.holiday_calendar 
+where ${dataform.projectConfig.vars.City} = true and Date >= '${dataform.projectConfig.vars.StartDate}' and Date <= '${dataform.projectConfig.vars.EndDate}' 

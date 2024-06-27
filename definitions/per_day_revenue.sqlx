@@ -4,6 +4,7 @@ config {
 }
 
 SELECT
+  LISTAGG(order_id) as Order_IDs,
   SUM(total_bill) AS total_revenue
 FROM
   presentation_dataset.orders
